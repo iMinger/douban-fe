@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import PagesView from '../views/PagesView'
 
 Vue.use(Router)
 
@@ -8,8 +8,28 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      redirect: '/pages/'
+    },
+    {
+      path:'/pages',
+      component: PagesView,
+      // 可以添加子路由
+      children:[
+        {
+          path: '',
+          redirect: '/pages/home'
+        },
+        {
+          path:'home',
+          name:'HomeView',
+          component:HomeView
+        },
+        {
+          path: 'movie',
+          name: 'MovieView',
+        
+        }
+      ]
     }
   ]
 })
