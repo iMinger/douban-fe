@@ -8,27 +8,14 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/pages/'
+      redirect: '/pages'
     },
     {
       path:'/pages',
       component: PagesView,
       // 可以添加子路由
       children:[
-        {
-          path: '',
-          redirect: '/pages/home'
-        },
-        {
-          path:'home',
-          name:'HomeView',
-          component:HomeView
-        },
-        {
-          path: 'movie',
-          name: 'MovieView',
         
-        }
       ]
     }
   ]

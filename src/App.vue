@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view class="view"></router-view>
   </div>
 </template>
 
@@ -19,7 +19,7 @@ html {
 }
 
 #app {
-  max-width: 41.2rem;
+  /* max-width: 41.2rem; */
   /* 上下外边距 0px, 左右水平居中 */
   margin: 0 auto;
 }

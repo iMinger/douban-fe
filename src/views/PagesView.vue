@@ -1,7 +1,9 @@
 <!-- 组件说明 -->
 <template>
-    <div class=''>
-        
+    <div class='pages-view'>
+        <header-bar @showTalion='open'></header-bar>
+        <router-view></router-view>
+        <talion-view v-show="talion" @closeTalion='close'></talion-view>
     </div>
 </template>
 
@@ -9,11 +11,11 @@
     //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
     //例如：import 《组件名称》 from '《组件路径》';
     import HeaderBar from '../components/HeaderBar'
-
+    import TalionView from '../components/TalionView'
     export default {
         name: 'pages-view',
         components: {
-
+            HeaderBar, TalionView
         },
         data () {
             //这里存放数据
@@ -49,7 +51,6 @@
     }
 </script>
 
-<style lang='scss' scoped>
-//@import url()
+<style  scoped>
 
 </style>
